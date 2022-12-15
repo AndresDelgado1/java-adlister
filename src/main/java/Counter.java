@@ -7,15 +7,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "Counter", urlPatterns = "/counter")
+public class Counter extends HttpServlet {
 private int counter = 0;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         counter += 1;
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, World!</h1>" + "<h2>The count is " + counter + "</h2>");
         out.println("<h2>The count is " + counter + "</h2>");
     }
 
